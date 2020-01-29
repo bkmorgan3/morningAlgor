@@ -33,5 +33,29 @@ You may assume both str1 and str2 have the same length.
  */
 
 const isIsomorphic = function (str1, str2) {
-  
+  // if strings arent the same length return false.
+  // Create a charmap with chars from str1 as key and chars from str2 as values
+    //  if chars dont exist in charmap, assign it during iteration 
+  // compare chars from str1 and str2
+
+  if (str1.length !== str2.length) {
+    console.log("not the same length")
+    return false;
+  }
+
+  const chars = {};
+
+  for (let i = 0; i < str1.length; i += 1) {
+    
+    let char = str1[i];
+    if (!chars[char]) {
+      chars[char] = str2[i]
+    } else if (chars[char] !== str2[i]) {
+      console.log("strings differ at index ", i)
+      return false
+    }
+  }
+  return true;
 };
+
+

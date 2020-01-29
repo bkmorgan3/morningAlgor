@@ -18,5 +18,4 @@ const isUnique = function (str) {
   }
   // if we get throug the loop we know there  are no duplicates
   return true
-
 };
